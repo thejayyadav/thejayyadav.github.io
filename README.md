@@ -1,87 +1,73 @@
-# Project Title
+## Voyager
 
-One Paragraph of project description goes here
+Just another jekyll theme. Demo: <http://redvi.github.io/voyager>
 
-## Getting Started
+### Feathures:
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+All HTML files are compressed (see `_layouts/compress.html`).
 
-### Prerequisites
+**Post**
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+All post settings can be changed. Example:
 
 ```
-Give the example
+---
+layout: post
+bg: '2016/background.jpg'
+title: "Post Heading"
+crawlertitle: "page title"
+summary: "post description"
+date: 2016-06-29
+tags : ['front-end']
+slug: post-url
+author: "Author"
+categories: posts
+---
 ```
 
-And repeat
+`bg` is a path to background of your article. By default backgrounds are placed in the `assets/images` directory.
+
+**Page**
+
+If page contains `active` tag, it will be show on site menu.
 
 ```
-until finished
+---
+layout: page
+title: "About"
+permalink: /about/
+active: about
+---
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+**Archive**
 
-## Running the tests
+Archive page is sorting posts by tags. No more than one tag in one post.
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Good:
 
 ```
-Give an example
+tags : ['front-end']
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Bad:
 
 ```
-Give an example
+tags : ['front-end', 'jekyll']
 ```
 
-## Deployment
+Don't forget to change `_config.yml`.
 
-Add additional notes about how to deploy this on a live system
+**Relative paths**
 
-## Built With
+If your blog is not in the root directory, you can include images with a relative path. For example:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+![my_image]({{ site.images | relative_url }}/image.jpg)
+```
 
-## Contributing
+## Production environment
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Build for production:
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+`JEKYLL_ENV=production jekyll build`
