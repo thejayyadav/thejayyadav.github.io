@@ -43,6 +43,11 @@ nav {
     color: var(--primary-color);
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
