@@ -40,12 +40,12 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Adds space between the logo image and your handle */
+    gap: 1rem; /* Adds space between the logo and your @thejayyadav link */
 }
 
-/* Controls the size of your SVG image file */
+/* Shrinks the image and adds a hover zoom */
 .logo img {
-    height: 40px; 
+    height: 45px; 
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -65,10 +65,6 @@ nav {
 
 .github-handle:hover {
     color: var(--primary-color); 
-}
-
-.logo svg:hover {
-    transform: scale(1.05);
 }
 
 .nav-links {
