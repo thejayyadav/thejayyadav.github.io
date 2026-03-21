@@ -40,11 +40,31 @@ nav {
 .logo {
     display: flex;
     align-items: center;
+    gap: 1rem; /* Adds space between the logo image and your handle */
 }
 
-/* Optional: This adds a smooth little zoom effect when you hover over your logo */
-.logo svg {
+/* Controls the size of your SVG image file */
+.logo img {
+    height: 40px; 
+    width: auto;
     transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Styles the GitHub handle link */
+.github-handle {
+    font-size: 0.9rem;
+    color: #64748b; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.github-handle:hover {
+    color: var(--primary-color); 
 }
 
 .logo svg:hover {
